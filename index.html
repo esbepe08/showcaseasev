@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Gali Aksara — Arabic Scrabble</title>
+<title>MY-PROJECT-GUWEH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Noto+Nastaliq+Urdu:wght@500;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--cream:#f4e9d0;--sand:#e8d3a6;--dune:#c99a62;--clay:#a8683f;--terra:#8a4a2b;--earth:#3b2414;--ink:#2e1d10;
 --body:'Tinos','Times New Roman',Times,serif;--ar:'Amiri','Traditional Arabic',serif;--ruq:'Aref Ruqaa','Amiri',serif;--nas:'Noto Nastaliq Urdu','Jameel Noori Nastaleeq',serif;--disp:'Fraunces',Georgia,'Times New Roman',serif;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-*,*::before,*::after{box-sizing:inherit}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);font-size:clamp(15px,.35vw + 13px,22px);-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--cream);color:var(--ink);font:400 1.18rem/1.75 var(--body);text-align:center;overflow-x:hidden}
+*,*::before,*::after{box-sizing:inherit}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);font-size:clamp(15px,.35vw + 13px,22px);-webkit-text-size-adjust:100%;overflow-x:hidden;max-width:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 1.18rem/1.75 var(--body);text-align:center;max-width:100%;position:relative}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.15;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .2 0 0 0 0 .1 0 0 0 .8 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
 h1,h2,h3{font-family:var(--disp);margin:0;line-height:1.1}
 html[lang=ar] h2,html[lang=ar] h3{font-family:var(--ruq)}html[lang=ar] body{font-family:var(--ar)}
@@ -90,6 +90,9 @@ footer{margin-top:70px;font:700 1.1rem/1.9 var(--ruq)}
 #tray{position:fixed;z-index:60;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));translate:-50%;display:flex;gap:7px;direction:rtl;padding:9px 11px;border-radius:16px;background:#2e1d10dd;opacity:0;transition:opacity .5s}
 #tray.on{opacity:1}#tray .tile{--s:2.5rem;opacity:.18;transform:translateY(8px) scale(.9);transition:.6s cubic-bezier(.3,1.6,.5,1)}#tray .tile.got{opacity:1;transform:none}
 #tray.full{box-shadow:0 0 0 2px #f3c987,0 0 30px #f3c98799}
+section{overflow-x:hidden}#bd{overflow-x:visible}
+@supports(overflow:clip){section,#bd{overflow-x:clip}}
+.nas{overflow-wrap:anywhere}
 @media(max-width:380px){#depth{font-size:.82rem;padding:5px 10px}.lang button{padding:4px 9px;font-size:.88rem}.k::before,.k::after{width:16px}.k{gap:8px}}
 @media(pointer:coarse){body::after{mix-blend-mode:normal;opacity:.07}}
 @media(min-width:1900px){.lead{max-width:50rem}}
