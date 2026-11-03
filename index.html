@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gali Aksara — Arabic Scrabble</title>
+<meta name="description" content="Gali Aksara: permainan merangkai kata Arab untuk dua pemain, lokal atau online. Tanpa kamus otomatis, pemain sendiri yang menjadi hakim.">
+<meta name="theme-color" content="#3b2414"><meta property="og:title" content="Gali Aksara — Arabic Scrabble"><meta property="og:url" content="https://arscmpo.vercel.app">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Noto+Nastaliq+Urdu:wght@500;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -70,6 +72,44 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 #s1{--bg:var(--sand);--fg:var(--ink)}#bd{--bg:#d9b57d;--fg:var(--ink);padding:0}#dm{--bg:#d2a86f;--fg:var(--ink)}#s2{--bg:var(--dune);--fg:var(--ink)}#s3{--bg:var(--terra);--fg:var(--cream)}#s4{--bg:var(--earth);--fg:var(--cream)}
 .vals{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;justify-content:center;direction:rtl}.vals .tile{--s:clamp(2.8rem,9vw,4.2rem)}
 .cap{font-size:1rem;opacity:.8;margin:16px auto 0;max-width:46ch}
+
+#st{--bg:var(--dune);--fg:var(--ink)}
+.seg{display:inline-flex;margin-top:28px;padding:3px;border-radius:99px;background:#3b241426}
+.seg button{border:0;background:transparent;color:inherit;font:700 1rem var(--ruq);padding:7px 18px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--earth);color:var(--cream)}
+#s4 .seg{background:#f4e9d01f}#s4 .seg button[aria-pressed=true]{background:var(--cream);color:var(--earth)}
+.str{margin:34px auto 0;max-width:46rem;border-radius:18px;overflow:hidden;box-shadow:0 14px 34px #3b241433}
+.band{display:grid;grid-template-columns:3rem 1fr;align-items:center;gap:10px;padding:12px 18px}
+.band.dk{color:var(--cream)}.band b{font:800 1.5rem var(--disp);opacity:.9}
+.bt{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.bt .tile{cursor:pointer;transition:transform .15s}.bt .tile:active{transform:scale(.92)}
+.tile.x{outline:2px dashed #8a4a2b;outline-offset:2px;animation:drp .55s both}
+.str.basic .tile.x,.str.basic .band.xo{display:none}
+@keyframes drp{from{opacity:0;transform:translateY(-34px) scale(.8)}to{opacity:1;transform:none}}
+.duel,.xr{margin:46px auto 0;max-width:46rem}
+.phs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+@media(max-width:640px){.phs{grid-template-columns:1fr}}
+.ph{border:2px solid #f4e9d066;border-radius:26px;background:#2e1d1055;padding:14px;min-height:14rem;display:flex;flex-direction:column;gap:10px;align-items:center;transition:border-color .3s,box-shadow .3s}
+.ph.act{border-color:#e8c98a;box-shadow:0 0 0 4px #e8c98a33}
+.ph h4{margin:0;font:700 .95rem var(--ruq);opacity:.8}.ph p{margin:0;font-size:1rem;line-height:1.5}
+.mw{font:700 2.3rem/1.6 var(--ar);direction:rtl;color:#9cc2f2}
+.dtx{width:100%;padding:11px 14px;border-radius:12px;border:2px solid #f4e9d0aa;background:#f4e9d01a;color:inherit;font:400 1rem var(--body)}
+.sm{padding:9px 22px;font-size:1.05rem}.qb:disabled{opacity:.4;cursor:default}
+.rs{font-size:.95rem;opacity:.9}.rq{font-style:italic;padding:8px 12px;border-radius:10px;background:#f4e9d01f;width:100%}
+.xrow{display:flex;gap:7px;justify-content:center;margin:8px 0 14px;direction:rtl}
+.xl{margin:14px 0 0;font:700 .95rem var(--ruq);opacity:.8}
+.tile.fd{background:repeating-linear-gradient(45deg,#6b4a22,#6b4a22 4px,#7d5a2c 4px,#7d5a2c 8px);color:transparent;transition:all .4s}.tile.fd i{display:none}
+.con{background:#150c06;color:#9fe0a0;text-align:left;direction:ltr;font:.95rem/1.6 ui-monospace,Consolas,monospace;padding:12px 16px;border-radius:12px;min-height:5.2rem;margin:12px 0 0;white-space:pre-wrap}
+.rg{display:flex;flex-direction:column;align-items:center;margin:10px auto 0;position:relative}
+.rg svg{display:block}.rg b{position:absolute;top:17px;left:50%;transform:translateX(-50%);font:800 .8rem var(--disp)}
+#rgc{transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1)}.rg.on #rgc{stroke-dashoffset:34}
+.rg small{display:block;max-width:34ch;font-size:.9rem;opacity:.85;margin-top:6px}
+.doors{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.door{display:flex;flex-direction:column;gap:2px;min-width:13rem;padding:16px 30px;border-radius:20px;text-decoration:none;font:700 1.3rem var(--ruq);transition:transform .2s}
+.door small{font:400 .9rem var(--body);opacity:.8}html[lang=ar] .door small{font-family:var(--ar)}
+.door.m{background:var(--earth);color:var(--cream)}.door.a{border:2px solid var(--earth);color:var(--earth)}.door:hover{transform:translateY(-3px)}
+.lob{margin-top:26px;font-size:.95rem;opacity:.9}.lob button{display:block;margin:8px auto 0;border:2px dashed currentColor;background:transparent;color:inherit;border-radius:12px;padding:8px 20px;font:800 1.5rem/1 var(--disp);letter-spacing:.3em;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.tile.x{animation:none}#rgc{transition:none}}
 </style>
 <style>
 /* board scene */
@@ -256,6 +296,18 @@ section{padding-top:clamp(90px,14vh,140px);padding-bottom:70px}
   </div>
 </section>
 
+<section id="st">
+  <svg class="wv" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80V40C240 0 480 0 720 30S1200 70 1440 20V80Z"/></svg>
+  <div class="in">
+    <div class="k rv" data-t="kst"></div>
+    <h2 class="rv" data-t="hst" data-bi></h2>
+    <p class="lead rv" data-t="pst"></p>
+    <div class="seg rv" role="group"><button data-m="basic" aria-pressed="false" data-t="stB"></button><button data-m="exp" aria-pressed="true" data-t="stX"></button></div>
+    <div class="str rv" id="str"></div>
+    <p class="cap rv" data-t="stn"></p>
+  </div>
+</section>
+
 <section id="bd" data-letter="ر">
   <svg class="wv" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleX(-1)"><path d="M0 80V40C240 0 480 0 720 30S1200 70 1440 20V80Z"/></svg>
   <div id="sc"><div class="stage">
@@ -306,7 +358,10 @@ section{padding-top:clamp(90px,14vh,140px);padding-bottom:70px}
       <div class="rule rv"><h3 data-t="r1h"></h3><p data-t="r1p"></p></div>
       <div class="rule rv"><h3 data-t="r2h"></h3><p data-t="r2p"></p></div>
       <div class="rule rv"><h3 data-t="r3h"></h3><p data-t="r3p"></p></div>
+      <div class="rule rv"><h3 data-t="r4h"></h3><p data-t="r4p"></p></div>
     </div>
+    <div class="duel rv" id="duel"><h3 id="duelh"></h3><p id="duelp" class="cap"></p>
+      <div class="phs"><div class="ph" id="phA"><h4 id="phAh"></h4><div id="phAb" style="display:contents"></div></div><div class="ph" id="phB"><h4 id="phBh"></h4><div id="phBb" style="display:contents"></div></div></div></div>
     <div class="quiz rv" id="quiz">
       <h3 data-t="qh" data-bi></h3>
       <p class="qp2" data-t="qp"></p>
@@ -335,6 +390,11 @@ section{padding-top:clamp(90px,14vh,140px);padding-bottom:70px}
       <div class="lay rv"><b data-t="l2h"></b><span data-t="l2p"></span></div>
       <div class="lay rv"><b data-t="l3h"></b><span data-t="l3p"></span></div>
     </div>
+    <div class="xr rv"><h3 data-t="xh"></h3>
+      <div class="seg" role="group"><button data-v="c" aria-pressed="true" data-t="xc"></button><button data-v="s" aria-pressed="false" data-t="xs"></button></div>
+      <p class="xl" data-t="xyou"></p><div class="xrow" id="xme"></div><p class="xl" data-t="xop"></p><div class="xrow" id="xop"></div>
+      <p class="xl"><span data-t="xbag"></span>: <b id="xbg"></b></p>
+      <button class="qb sm" id="peek" type="button" data-t="xpk"></button><pre class="con" id="con" aria-live="polite"></pre></div>
     <div class="fact rv"><span data-t="f1"></span><span data-t="f2"></span><span data-t="f3"></span></div>
   </div>
 </section>
@@ -344,7 +404,8 @@ section{padding-top:clamp(90px,14vh,140px);padding-bottom:70px}
     <div id="wordwrap"><div id="word" lang="ar" aria-label="عربية">عربية</div><div id="pen" aria-hidden="true"></div></div>
     <h2 class="rv ar" lang="ar" style="font-family:var(--ruq);line-height:1.8">تعلم ثم العب</h2>
     <p class="lead rv" data-t="p7"></p>
-    <a class="go" href="https://easv523mpo.vercel.app" target="_blank" rel="noopener" data-t="go"></a>
+    <div class="doors rv"><a class="door m" href="https://arscmpo.vercel.app" target="_blank" rel="noopener noreferrer"><span data-t="dpl"></span><small data-t="dpls"></small></a><a class="door a" href="https://arscmpo.vercel.app" target="_blank" rel="noopener noreferrer"><span data-t="don"></span><small data-t="dons"></small></a></div>
+    <div class="lob rv"><span data-t="lobt"></span><button id="lobc" type="button" aria-label="Roll"></button></div>
     <footer data-t="foot"></footer>
   </div>
 </section>
@@ -352,6 +413,16 @@ section{padding-top:clamp(90px,14vh,140px);padding-bottom:70px}
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
 <script>
 const T={
+kst:['Lapisan nilai · 4 m','طبقة القيمة · ٤ م'],
+hst:['Makin langka, makin dalam, makin mahal.','كلما ندر الحرف، غاص أعمق وغلا.'],
+pst:['Tiap lapisan adalah harga. Di mode Diperluas, delapan huruf tambahan (berbingkai putus-putus) ikut turun ke lapisan sesuai kelangkaannya.','كل طبقة هي ثمن. وفي الموسع تنزل الحروف الثمانية الإضافية (بإطار متقطع) إلى طبقتها بحسب ندرتها.'],
+stB:['Dasar · 28 huruf','الأساسي · ٢٨ حرفا'],stX:['Diperluas · 36 huruf','الموسع · ٣٦ حرفا'],
+stn:['ة tetap bernilai 3 karena menutup sebagian besar kata benda feminin. Ketuk keping untuk mendengar nadanya: makin mahal, makin tinggi.','تبقى «ة» بقيمة ٣ لأنها تختم أغلب الأسماء المؤنثة. انقر قطعة لتسمع نغمتها: كلما غلت علت.'],
+r4h:['Jeda dan batalkan','إيقاف وإلغاء'],r4p:['Tiap pemain punya 2 jeda (maks. 3 menit, papan disembunyikan). Membatalkan langkah online perlu persetujuan lawan.','لكل لاعب إيقافان مؤقتان (٣ دقائق كحد أقصى ويُخفى اللوح). وإلغاء الحركة أونلاين يحتاج موافقة الخصم.'],
+xh:['Tembus pandang: layarmu vs server','نظرة كاشفة: شاشتك أم الخادم'],xc:['Layar kamu','شاشتك'],xs:['Server','الخادم'],xyou:['Rakmu','رفك'],xop:['Rak lawan','رف الخصم'],xbag:['Kantong huruf','كيس الحروف'],xpk:['Intip lewat konsol','تجسس عبر الكونسول'],
+xcm:['// rak lawan dan kantong huruf tidak pernah dikirim ke browser','// رف الخصم وكيس الحروف لا يُرسلان إلى المتصفح'],
+rbon:['+5 detik tiap langkah. Pass, tukar huruf, dan langkah penutup tidak dapat bonus.','+٥ ثوان لكل حركة. لا زيادة للتجاوز ولا للتبديل ولا للحركة الأخيرة.'],
+dpl:['MAIN','العب'],dpls:['Dua pemain, satu perangkat','لاعبان على جهاز واحد'],don:['ONLINE','أونلاين'],dons:['Dua perangkat, satu kode ruang','جهازان ورمز غرفة واحد'],lobt:['Contoh kode ruang (simulasi, ketuk untuk acak)','مثال لرمز غرفة (محاكاة، انقر للتغيير)'],
 by:['Sultan Bagus Permadi','سلطان باغوس برمادي'],cue:['Gali ke bawah','انزل للحفر'],
 iskip:['Ketuk untuk langsung menyelam','انقر للنزول مباشرة'],
 snd:['Suara','الصوت'],
@@ -380,7 +451,7 @@ k4:['Lapisan terakota · 10 m','طبقة الفخار · ١٠ م'],
 h4:['Kamusnya adalah kamu.','المعجم هو أنت.'],
 p5:['Aturan yang paling membedakan: tidak ada kamus otomatis. Sah atau tidaknya kata diputuskan oleh pemain sendiri.','أبرز ما يميزها: لا معجم آلي. اللاعبون أنفسهم يحكمون على صحة الكلمة.'],
 qh:['Uji insting bahasamu','اختبر حسّك اللغوي'],
-qp:['Tiga kata muncul di papan. Kamulah hakimnya: sah atau tidak?','ثلاث كلمات على اللوح، وأنت الحكم: صحيحة أم خاطئة؟'],
+qp:['Empat kata muncul di papan. Kamulah hakimnya: sah atau tidak?','أربع كلمات على اللوح، وأنت الحكم: صحيحة أم خاطئة؟'],
 qkata:['Kata','الكلمة'],qnext:['Kata berikutnya','الكلمة التالية'],qres:['Lihat hasil','النتيجة'],qagain:['Coba lagi','حاول مجددا'],
 qright:['Tepat!','!أحسنت'],qwrong:['Kurang pas.','ليس صحيحا.'],
 r1h:['<span class="ar">تحكيم</span> · Tahkim','تحكيم'],r1p:['Setelah lawan bermain, kamu menilai langkahnya <span class="ar">صحيح</span> atau <span class="ar">خطأ</span>. Putusan itu satu-satunya penentu kata, jadi pemain harus benar-benar mengerti bahasanya.','بعد لعب الخصم تحكم على حركته بـ«صحيح» أو «خطأ». وهذا الحكم هو المحدد الوحيد، فعلى اللاعب أن يتقن اللغة.'],
@@ -408,7 +479,7 @@ function setLang(l){lang=l;const i=l==='id'?0:1,h=document.documentElement;h.lan
  $$('.lang button[data-l]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
  $('#snd').setAttribute('aria-label',T.snd[i]);
  $('#fossil').setAttribute('aria-label',T.dig[i]);
- labelTicks();renderQuiz();
+ labelTicks();renderQuiz();if(window.drawX)drawX();
  try{localStorage.setItem('gl',l)}catch(e){}frame()}
 $$('.lang button[data-l]').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
 /* tray */
@@ -459,6 +530,7 @@ const AU=(()=>{let ctx=null,master,windG,rumG,NB,started=false,muted=false;
   tick:()=>tone(950,700,.05,'square',.1),
   crack:()=>{hiss(.16,1400,500,.35);tone(220,90,.2,'sawtooth',.12)},
   brush:()=>hiss(.5,1700,600,.1),
+  pitch:v=>tone(170*Math.pow(1.125,v),0,.28,'triangle',.28),ring:()=>{tone(660,990,.18,'sine',.18);setTimeout(()=>tone(990,1320,.22,'sine',.15),110)},
   success:()=>{tone(523,0,.18,'sine',.22);setTimeout(()=>tone(784,0,.32,'sine',.22),150)}}})();
 const sndB=$('#snd');
 function sndUI(){sndB.setAttribute('aria-pressed',AU.isMuted()?'false':'true')}
@@ -470,7 +542,7 @@ const dc=$('#dust'),dcx=dc.getContext('2d');let DW=0,DH=0,parts=[];
 function dsize(){const DPR=Math.min(devicePixelRatio||1,2);DW=innerWidth;DH=innerHeight;dc.width=DW*DPR;dc.height=DH*DPR;dc.style.width=DW+'px';dc.style.height=DH+'px';dcx.setTransform(DPR,0,0,DPR,0,0)}
 dsize();addEventListener('resize',dsize);
 (function dloop(){requestAnimationFrame(dloop);if(document.hidden||reduce)return;
- const tgt=Math.round(16+curP*84);
+ const tgt=Math.round((16+curP*84)*(DW<700?.55:1));
  while(parts.length<tgt)parts.push({x:Math.random()*DW,y:Math.random()*DH,r:.6+Math.random()*1.9,vy:-(.12+Math.random()*.34),vx:(Math.random()-.5)*.22,a:.12+Math.random()*.3,ph:Math.random()*6.28});
  if(parts.length>tgt)parts.length=tgt;
  dcx.clearRect(0,0,DW,DH);const t=performance.now()/1000;
@@ -575,14 +647,15 @@ $('#dreset').addEventListener('click',()=>{dsum=0;dsel=null;dscore.textContent=0
 const QZ=[
  {w:'مَدْرَسَة',v:true,x:['«مدرسة» artinya sekolah — kata nyata, sah dimainkan.','«مدرسة» كلمة حقيقية، فهي صحيحة.']},
  {w:'بتك',v:false,x:['«بتك» hanya rentetan huruf tanpa makna — harus ditolak.','«بتك» حروف بلا معنى، فيجب رفضها.']},
+ {w:'كِتَابِي',v:false,x:['«كتابي» (bukuku) = kata benda + kata ganti sambung, yaitu idhafah. Itu tidak diperbolehkan di game ini.','«كتابي» اسم + ضمير متصل أي إضافة، وهي غير مسموحة في هذه اللعبة.']},
  {w:'كِتَاب',v:true,x:['«كتاب» artinya buku — sah. Di tahkim sungguhan, lawanmulah yang menilai langkahmu.','«كتاب» كلمة صحيحة. وفي التحكيم الحقيقي خصمك هو من يحكم على حركتك.']}];
 let qi=0,qokN=0;const qn=$('#qn'),qw=$('#qw'),qfb=$('#qfb'),qbO=$('#qbOk'),qbN=$('#qbNo'),qnx=$('#qnext');
 function renderQuiz(){const i=lang==='id'?0:1;
  if(qi>=QZ.length){qw.style.display='none';qbO.style.display=qbN.style.display='none';qn.textContent='';
-  qfb.textContent=lang==='id'?`Kamu menilai benar ${qokN} dari 3 kata.`:`أصبت ${fmt(qokN)} من ٣ كلمات.`;
+  qfb.textContent=lang==='id'?`Kamu menilai benar ${qokN} dari ${QZ.length} kata.`:`أصبت ${fmt(qokN)} من ${fmt(QZ.length)} كلمات.`;
   qnx.style.display='';qnx.textContent=T.qagain[i];
   qnx.onclick=()=>{qi=0;qokN=0;qw.style.display='';qbO.style.display=qbN.style.display='';renderQuiz()};return}
- const q=QZ[qi];qn.textContent=`${T.qkata[i]} ${fmt(qi+1)} / ${fmt(3)}`;qw.textContent=q.w;qfb.textContent='';
+ const q=QZ[qi];qn.textContent=`${T.qkata[i]} ${fmt(qi+1)} / ${fmt(QZ.length)}`;qw.textContent=q.w;qfb.textContent='';
  qbO.disabled=qbN.disabled=false;qbO.className='qb';qbN.className='qb';qnx.style.display='none'}
 function answer(v){const i=lang==='id'?0:1,q=QZ[qi],ok=v===q.v;
  qbO.disabled=qbN.disabled=true;(v?qbO:qbN).classList.add(ok?'ok':'no');
@@ -667,6 +740,66 @@ addEventListener('resize',frame);
 sndUI();
 let sv;try{sv=localStorage.getItem('gl')}catch(e){}
 setLang(sv==='ar'?'ar':'id');
+</script>
+
+<script>
+/* ---------- v5.3 additions: value strata, tahkim duel, x-ray, +5 s ring, room code ---------- */
+const SV=[[1,'ا ل ي ت ن ر|'],[2,'و م ب د ه|'],[3,'س ج ح ك|ة'],[4,'خ ق ف|أ ى'],[5,'ث ذ ش ض|'],[6,'|ء إ'],[7,'|ئ'],[8,'ط ظ ع|ؤ'],[10,'ص ز غ|آ']],
+ BC=['#ecd9ae','#e6cf9f','#dec292','#d4b182','#c99e72','#b98760','#a8714f','#8f5a3d','#6e4128'],VAL={};
+const str=$('#str');
+SV.forEach(([v,s],k)=>{const [b,x]=s.split('|'),r=document.createElement('div');r.className='band'+(k>5?' dk':'')+(b.trim()?'':' xo');r.style.background=BC[k];
+ r.innerHTML=`<b>${v}</b><div class="bt"></div>`;const bt=r.lastChild;
+ const add=(ch,xx)=>{VAL[ch]=v;const t=document.createElement('span');t.className='tile'+(xx?' x':'');t.style.setProperty('--s','2.6rem');t.dataset.v=v;t.innerHTML=ch+'<i>'+v+'</i>';bt.append(t)};
+ b.split(' ').filter(Boolean).forEach(c=>add(c,0));x.split(' ').filter(Boolean).forEach(c=>add(c,1));str.append(r)});
+str.addEventListener('click',e=>{const t=e.target.closest('.tile');if(t){AU.start();AU.pitch(+t.dataset.v)}});
+function setMode(m){str.classList.toggle('basic',m==='basic');$$('[data-m]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m));
+ if(m==='exp'){AU.start();$$('#str .tile.x').sort((a,b)=>a.dataset.v-b.dataset.v).forEach((t,i)=>{t.style.animation='none';void t.offsetWidth;t.style.animation=reduce?'none':`drp .55s ${i*.09}s both`;setTimeout(()=>AU.pitch(+t.dataset.v),i*90)})}}
+$$('[data-m]').forEach(b=>b.onclick=()=>setMode(b.dataset.m));
+/* tahkim duel */
+const DU={h:['Tahkim online: tantang dengan alasan','التحكيم أونلاين: اعترض مع ذكر السبب'],
+p:['Menantang kata butuh alasan tertulis (3–160 huruf). Lawan menyetujui atau menolak dulu, baru kamu memutuskan صحيح atau خطأ. Coba: lawan baru memainkan «كتابي».','الاعتراض على كلمة يتطلب سببا مكتوبا (٣–١٦٠ حرفا). يوافق الخصم أو يرفض أولا، ثم تحكم بـ«صحيح» أو «خطأ». جرّب: لعب خصمك للتو «كتابي».'],
+you:['Kamu · penantang','أنت · المعترض'],opp:['Lawan · pemain kata','الخصم · صاحب الكلمة'],
+b0:['Langkah dimainkan. Jam berjalan.','لُعبت الحركة. الساعة تعمل.'],ch:['Tantang kata ini','اعترض على الكلمة'],
+ph:['Tulis alasanmu…','اكتب سببك…'],send:['Kirim tantangan','أرسل الاعتراض'],wait:['Menunggu persetujuan lawan…','بانتظار موافقة الخصم…'],
+card:['Langkahmu ditantang. Alasannya:','اعتُرض على حركتك. السبب:'],ap:['Setujui','وافق'],de:['Tolak','ارفض'],
+rq:['Alasan disetujui. Sekarang putuskan:','وُوفق على السبب. احكم الآن:'],bw:['Menunggu putusan penantang…','بانتظار حكم المعترض…'],
+ok:['Putusan صحيح: langkah tetap sah.','حكم «صحيح»: تبقى الحركة صحيحة.'],no:['Putusan خطأ: langkah dibatalkan, keping kembali ke rak, bonus +5 detik ditarik.','حكم «خطأ»: أُلغيت الحركة وتعود القطع إلى الرف ويُسترد بونص ٥ ثوان.'],
+dec:['Tantangan ditolak: langkah tetap berlaku, jam jalan lagi, dan langkah yang sama tidak bisa ditantang lagi.','رُفض الاعتراض: تبقى الحركة وتعود الساعة للعمل، ولا يُعترض عليها ثانية.'],
+hint:['Catatan: «كتابي» adalah idhafah (kata benda + kata ganti sambung), jadi putusan yang tepat: خطأ.','ملاحظة: «كتابي» إضافة (اسم + ضمير متصل)، فالحكم الصحيح «خطأ».'],again:['Ulangi','أعد']};
+let ds=0,dre='',dres='';
+function drawDuel(){const i=lang==='id'?0:1,t=k=>DU[k][i],A=$('#phAb'),B=$('#phBb'),W='<div class="mw" lang="ar">كِتَابِي</div>',esc=x=>x.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+ $('#duelh').textContent=t('h');$('#duelp').textContent=t('p');$('#phAh').textContent=t('you');$('#phBh').textContent=t('opp');
+ $('#phA').classList.toggle('act',ds===0||ds===1||ds===3);$('#phB').classList.toggle('act',ds===2);
+ const bt=(a,k,c)=>`<button class="qb sm" type="button" data-a="${a}" ${c||''}>${k}</button>`;
+ let a='',b='';
+ if(ds<2){a=W+(ds?`<input class="dtx" id="dre" maxlength="160" placeholder="${t('ph')}" value="${esc(dre)}">${bt('send',t('send'),dre.trim().length<3?'disabled':'')}`:bt('start',t('ch')));b='<p>'+t('b0')+'</p>'}
+ else if(ds===2){a=W+'<p>'+t('wait')+'</p>';b=`<p>${t('card')}</p><div class="rq">${esc(dre)}</div><div>${bt('ap',t('ap'))} ${bt('de',t('de'))}</div>`}
+ else if(ds===3){a=`<p>${t('rq')}</p><div class="rq">${esc(dre)}</div><div>${bt('ok','✔ صحيح')} ${bt('no','✖ خطأ')}</div>`;b='<p>'+t('bw')+'</p>'}
+ else{a=`<p>${t(dres)}</p>`+(dres==='dec'?'':`<p class="rs">${t('hint')}</p>`)+bt('re',t('again'));b=`<p class="rs">${t(dres)}</p>`}
+ A.innerHTML=a;B.innerHTML=b;if(ds===1){const n=$('#dre');n.focus({preventScroll:true})}}
+$('#duel').addEventListener('input',e=>{if(e.target.id==='dre'){dre=e.target.value;$('#duel [data-a=send]').disabled=dre.trim().length<3}});
+$('#duel').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a;AU.start();AU.tick();
+ if(a==='start')ds=1;else if(a==='send')ds=2;else if(a==='ap')ds=3;else if(a==='de'){ds=4;dres='dec'}else if(a==='ok'){ds=4;dres='ok';AU.success()}else if(a==='no'){ds=4;dres='no';AU.crack()}else if(a==='re'){ds=0;dre=''}
+ drawDuel()});
+/* x-ray */
+let xv='c';const XM='ع ر ب ي ة ا ل'.split(' '),XO='ق م س ا ن ه ء'.split(' ');
+function drawX(){const i=lang==='id'?0:1,mk=(l,fd)=>`<span class="tile${fd?' fd':''}" style="--s:2.4rem">${l}<i>${VAL[l]||1}</i></span>`;
+ $('#xme').innerHTML=XM.map(l=>mk(l)).join('');$('#xop').innerHTML=XO.map(l=>mk(l,xv==='c')).join('');
+ $('#xbg').textContent=xv==='c'?'?':fmt(87);$$('[data-v]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===xv));
+ if($('#ddone')){const r=$('#rgt');if(r)r.textContent=lang==='id'?'+5 s':'+٥ ث'}drawDuel()}
+$$('[data-v]').forEach(b=>b.onclick=()=>{xv=b.dataset.v;AU.start();AU.tick();drawX()});
+$('#peek').onclick=()=>{AU.start();const c=$('#con'),L=['> opponent.rack','undefined','> bag','undefined',T.xcm[lang==='id'?0:1]];c.textContent='';
+ L.forEach((l,k)=>setTimeout(()=>{c.textContent+=(k?'\n':'')+l;if(k<4)AU.tick()},reduce?0:k*420))};
+/* +5 s ring in the practice board */
+const dd=$('#ddone');dd.querySelector('br').insertAdjacentHTML('afterend','<span class="rg" id="rg"><svg viewBox="0 0 44 44" width="52" height="52" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="none" stroke="#3b241433" stroke-width="4"/><circle id="rgc" cx="22" cy="22" r="18" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="113" stroke-dashoffset="68" transform="rotate(-90 22 22)"/></svg><b id="rgt">+5 s</b><small data-t="rbon"></small></span>');
+$('#rg small').textContent=T.rbon[lang==='id'?0:1];
+new MutationObserver(()=>{const on=dd.classList.contains('show'),r=$('#rg');if(on){setTimeout(()=>{r.classList.add('on');AU.ring()},350)}else r.classList.remove('on')}).observe(dd,{attributes:true,attributeFilter:['class']});
+/* room code */
+const lc=$('#lobc'),CH='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+const roll=()=>{let c='';for(let k=0;k<6;k++)c+=CH[Math.random()*CH.length|0];lc.textContent=c;lc.setAttribute('aria-label',c)};
+lc.onclick=()=>{AU.start();AU.tick();roll()};roll();
+setMode('exp');drawX();
+setLang(lang);
 </script>
 </body>
 </html>
